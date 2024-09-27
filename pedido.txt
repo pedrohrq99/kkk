@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Irrecusável</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #070607;
+            color: #e4e4e4;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #c300ff;
+        }
+        p {
+            font-size: 1.5em;
+            color: #c300ff;
+        }
+        .button-container {
+            margin-top: 30px;
+        }
+        .button {
+            background-color: #c300ff;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #c300ff;
+        }
+        #btn-nao {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Darvila Oliveira quer namorar comigo?</h1>
+    <p>Eu quero você por inteira, com todas as  cicatrizes e marcas, quero o seu lado bom e o ruim, quero amar cada uma de suas versões! 💖💖💖</p>
+    
+    <div class="button-container">
+        <button class="button" onclick="mostrarResposta('Sim')">Sim!</button>
+        <button class="button" id="btn-nao" onclick="mostrarResposta('Não')">Não :(</button>
+    </div>
+    <p id="resposta" style="margin-top: 20px; font-size: 2em;"></p>
+
+    <script>
+        const btnNao = document.getElementById("btn-nao");
+
+        btnNao.addEventListener("mouseover", function() {
+            const larguraJanela = window.innerWidth;
+            const alturaJanela = window.innerHeight;
+            const novaPosX = Math.random() * (larguraJanela - btnNao.offsetWidth);
+            const novaPosY = Math.random() * (alturaJanela - btnNao.offsetHeight);
+
+            btnNao.style.left = novaPosX + "px";
+            btnNao.style.top = novaPosY + "px";
+        });
+
+        function mostrarResposta(resposta) {
+            const elementoResposta = document.getElementById("resposta");
+            if (resposta === 'Sim') {
+                elementoResposta.innerHTML = "O meu mundo ficou mais colorido depois que  você começou fazer parte dele gatinha.! ❤️";
+            } else {
+                elementoResposta.innerHTML = "Não existe essa opção... 😢";
+            }
+        }
+    </script>
+</body>
+</html>
